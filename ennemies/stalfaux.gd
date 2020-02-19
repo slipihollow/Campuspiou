@@ -17,5 +17,4 @@ func _physics_process(delta):
 	if movetimer == 0 || is_on_wall():
 		movedir = dir.rand()
 		movetimer = movetimer_lenght
-	#####
-	#####
+		
