@@ -593,7 +593,7 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0, 1, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
+"update": 1,
 "values": [ Vector2( 6.90462, 24.3056 ), Vector2( -3.16067, 29.6193 ), Vector2( -3.16067, 29.6193 ) ]
 }
 tracks/2/type = "value"
@@ -605,7 +605,7 @@ tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0, 1, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
+"update": 1,
 "values": [ 150.0, 180.0, 180.0 ]
 }
 tracks/3/type = "value"
@@ -629,12 +629,12 @@ tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0, 1, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
+"update": 1,
 "values": [ 150.0, 180.0, 180.0 ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("area/hitbox:position")
-tracks/5/interp = 1
+tracks/5/interp = 0
 tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
@@ -654,7 +654,7 @@ tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 8.0 ]
+"values": [ 3.0 ]
 }
 
 [sub_resource type="Animation" id=11]
@@ -757,7 +757,7 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 1, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
+"update": 1,
 "values": [ Vector2( 24.7188, -7.40899 ), Vector2( 31.2593, 3.77689 ), Vector2( 31.2593, 3.77689 ) ]
 }
 tracks/1/type = "value"
@@ -769,7 +769,7 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0, 1, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
+"update": 1,
 "values": [ 60.0, 90.0, 90.0 ]
 }
 tracks/2/type = "value"
@@ -793,7 +793,7 @@ tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0, 1, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
+"update": 1,
 "values": [ 60.0, 90.0, 90.0 ]
 }
 tracks/4/type = "value"
@@ -810,7 +810,7 @@ tracks/4/keys = {
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("area/hitbox:position")
-tracks/5/interp = 1
+tracks/5/interp = 0
 tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
@@ -830,7 +830,7 @@ tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 8.0 ]
+"values": [ 3.0 ]
 }
 
 [sub_resource type="Animation" id=13]
@@ -845,7 +845,7 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 1, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
+"update": 1,
 "values": [ Vector2( -7.01908, -27.1333 ), Vector2( 5.03772, -37.4348 ), Vector2( 5.03772, -37.4348 ) ]
 }
 tracks/1/type = "value"
@@ -869,7 +869,7 @@ tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0, 1, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
+"update": 1,
 "values": [ -30.0, 0.0, 0.0 ]
 }
 tracks/3/type = "value"
@@ -881,7 +881,7 @@ tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0, 1, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
+"update": 1,
 "values": [ -30.0, 0.0, 0.0 ]
 }
 tracks/4/type = "value"
@@ -898,7 +898,7 @@ tracks/4/keys = {
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("area/hitbox:position")
-tracks/5/interp = 1
+tracks/5/interp = 0
 tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
@@ -918,7 +918,7 @@ tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 8.0 ]
+"values": [ 3.0 ]
 }
 
 [sub_resource type="Animation" id=14]
@@ -1296,11 +1296,11 @@ anims/swordright = SubResource( 16 )
 anims/swordup = SubResource( 17 )
 
 [node name="sprite" type="Sprite" parent="."]
-position = Vector2( 6.90462, 24.3056 )
-rotation = 2.61799
+position = Vector2( -26.7755, -5.89367 )
+rotation = 5.23599
+z_index = -1
 texture = ExtResource( 2 )
 vframes = 2
-frame = 1
 
 [node name="area" type="Area2D" parent="."]
 __meta__ = {
@@ -1308,6 +1308,6 @@ __meta__ = {
 }
 
 [node name="hitbox" type="CollisionShape2D" parent="area"]
-position = Vector2( 3.94172, 20.1852 )
-rotation = 2.61799
+position = Vector2( -22.1411, -3.8172 )
+rotation = 5.23599
 shape = SubResource( 2 )
