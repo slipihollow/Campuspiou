@@ -3,13 +3,13 @@
 [ext_resource path="res://engine/Camera.gd" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 80, 64 )
+extents = Vector2( 80, 48 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 320, 2 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 2, 240 )
+extents = Vector2( 2, 180 )
 
 [node name="Camera" type="Camera2D"]
 anchor_mode = 0
@@ -19,17 +19,20 @@ __meta__ = {
 }
 
 [node name="area" type="Area2D" parent="."]
+editor/display_folded = true
 scale = Vector2( 4, 3.75 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area"]
-position = Vector2( 79.7717, 80 )
+position = Vector2( 80, 48 )
 shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-visible = false
 collision_layer = 2
 collision_mask = 0
 __meta__ = {
@@ -37,7 +40,7 @@ __meta__ = {
 }
 
 [node name="top" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 320, 478 )
+position = Vector2( 320, 358 )
 shape = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true
@@ -51,14 +54,14 @@ __meta__ = {
 }
 
 [node name="left" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 2, 240 )
+position = Vector2( 2, 180 )
 shape = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="right" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 638, 240 )
+position = Vector2( 638, 180 )
 shape = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true
