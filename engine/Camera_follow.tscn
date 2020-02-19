@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 160.832, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 11.4667, 154.126 )
+
+[node name="camera_follow" type="Camera2D"]
+position = Vector2( -0.197845, 0.19334 )
+current = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="top" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -0.109528, -142.71 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="bottom" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 2.10472, 144.134 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="left" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -158.835, 1.25656 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="right" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 159.691, 1.28944 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
