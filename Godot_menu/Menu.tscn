@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Theme/Theme_test.tres" type="Theme" id=1]
+[ext_resource path="res://Menu.gd" type="Script" id=2]
+[ext_resource path="res://image.png" type="Texture" id=3]
+
+[node name="Main Menu" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="image" type="Sprite" parent="Control"]
+position = Vector2( 331.052, 189.557 )
+scale = Vector2( 1.34983, 0.98216 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 641.0
+margin_bottom = 381.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+margin_left = 320.0
+margin_right = 320.0
+margin_bottom = 381.0
+size_flags_horizontal = 4
+custom_constants/separation = 16
+
+[node name="Titre logo" type="TextureRect" parent="Control/MarginContainer/VBoxContainer"]
+
+[node name="Buttons" type="VBoxContainer" parent="Control/MarginContainer"]
+margin_left = 273.0
+margin_top = 155.0
+margin_right = 368.0
+margin_bottom = 225.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/separation = 20
+alignment = 2
+
+[node name="New Game Button" type="Button" parent="Control/MarginContainer/Buttons"]
+margin_right = 95.0
+margin_bottom = 25.0
+text = "New game"
+
+[node name="Button" type="Button" parent="Control/MarginContainer/Buttons"]
+margin_top = 45.0
+margin_right = 95.0
+margin_bottom = 70.0
+text = "Exit"
+[connection signal="pressed" from="Control/MarginContainer/Buttons/New Game Button" to="Control" method="_on_New_Game_Button_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/Buttons/Button" to="Control" method="_on_Button_pressed"]
