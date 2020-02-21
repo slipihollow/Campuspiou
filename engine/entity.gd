@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 export (int) var MAXHEALTH = 2
-export (String, "ENEMY", "PLAYER") var TYPE = "ENEMY"
+export (String, "ENEMY", "PLAYER", "NPC") var TYPE = "ENEMY"
 export (float) var SPEED = 50
 
 var movedir = Vector2(0,0)
@@ -18,8 +18,8 @@ func _ready():
 	if TYPE == "ENEMY": #définir collision entre type + sprites de dommage
 		set_collision_mask_bit(1,1)
 		set_physics_process(false)
-	texture_default = $sprite.texture
-	texture_hurt = load($sprite.texture.get_path().replace(".png","_hurt.png"))
+#	texture_default = $sprite.texture
+#	texture_hurt = load($sprite.texture.get_path().replace(".png","_hurt.png"))
 
 func movement_loop(): # définir le knockback quand toucher un ennemi
 	var motion
