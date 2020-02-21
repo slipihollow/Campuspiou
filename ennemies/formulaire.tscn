@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://ennemies/formulaire.gd" type="Script" id=1]
+[ext_resource path="res://ennemies/formulaire.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "formulaire"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 13.8358, 20.2858 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 8.40347, 14.1449 )
+
+[node name="formulaire" type="KinematicBody2D"]
+script = ExtResource( 1 )
+TYPE = "NPC"
+
+[node name="sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+vframes = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="anim" type="AnimationPlayer" parent="."]
+anims/formulaire = SubResource( 1 )
+
+[node name="shape" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="hitbox" type="Area2D" parent="."]
+editor/display_folded = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
