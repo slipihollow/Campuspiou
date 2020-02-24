@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Game_over.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Game_over" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Game_over"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 322.5, 166.5 )
+scale = Vector2( 11.0781, 6.20313 )
+texture = ExtResource( 2 )
+
+[node name="MarginContainer" type="MarginContainer" parent="Game_over"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 640.0
+margin_bottom = 340.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Game_over/MarginContainer"]
+margin_left = 320.0
+margin_right = 320.0
+margin_bottom = 340.0
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Game_over/MarginContainer/VBoxContainer"]
+margin_top = 170.0
+margin_bottom = 170.0
+
+[node name="Buttons" type="VBoxContainer" parent="Game_over/MarginContainer"]
+margin_left = 278.0
+margin_top = 140.0
+margin_right = 361.0
+margin_bottom = 200.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/separation = 20
+alignment = 2
+
+[node name="Continue" type="Button" parent="Game_over/MarginContainer/Buttons"]
+margin_right = 83.0
+margin_bottom = 20.0
+text = "Continue ? "
+
+[node name="Ragequit" type="Button" parent="Game_over/MarginContainer/Buttons"]
+margin_top = 40.0
+margin_right = 83.0
+margin_bottom = 60.0
+text = "Ragequit"
+[connection signal="pressed" from="Game_over/MarginContainer/Buttons/Continue" to="Game_over" method="_on_Continue_pressed"]
+[connection signal="pressed" from="Game_over/MarginContainer/Buttons/Ragequit" to="Game_over" method="_on_Ragequit_pressed"]
