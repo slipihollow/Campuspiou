@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/wolfman.wav-9b355f7e91fc9cc6276b901f6a47e71d.sample"
+
+[deps]
+
+source_file="res://sounds/RPG Sound Pack/NPC/misc/wolfman.wav"
+dest_files=[ "res://.import/wolfman.wav-9b355f7e91fc9cc6276b901f6a47e71d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

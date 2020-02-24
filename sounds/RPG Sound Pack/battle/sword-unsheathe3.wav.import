@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sword-unsheathe3.wav-d9e839bec067030778464ed807476cf5.sample"
+
+[deps]
+
+source_file="res://sounds/RPG Sound Pack/battle/sword-unsheathe3.wav"
+dest_files=[ "res://.import/sword-unsheathe3.wav-d9e839bec067030778464ed807476cf5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
