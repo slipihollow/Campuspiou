@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/armor-light.wav-768300799c3ecf68e5ad6f884202207b.sample"
+
+[deps]
+
+source_file="res://sounds/RPG Sound Pack/inventory/armor-light.wav"
+dest_files=[ "res://.import/armor-light.wav-768300799c3ecf68e5ad6f884202207b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

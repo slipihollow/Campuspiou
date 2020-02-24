@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/bottle.wav-bc8f6fcdff5db74fb5f9174ddea60baa.sample"
+
+[deps]
+
+source_file="res://sounds/RPG Sound Pack/inventory/bottle.wav"
+dest_files=[ "res://.import/bottle.wav-bc8f6fcdff5db74fb5f9174ddea60baa.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

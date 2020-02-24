@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/bubble.wav-11eb791dbe6fd1a635706b6223b90434.sample"
+
+[deps]
+
+source_file="res://sounds/RPG Sound Pack/inventory/bubble.wav"
+dest_files=[ "res://.import/bubble.wav-11eb791dbe6fd1a635706b6223b90434.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
