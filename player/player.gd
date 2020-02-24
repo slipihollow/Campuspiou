@@ -1,5 +1,10 @@
 extends "res://engine/entity.gd"
 
+######
+class_name Player
+onready var swordsounds = $"audioeffect/swordsound"
+onready var spearsounds = $"audioeffect/spearsound"
+######
 var state = "default"
 
 var keys = 0
@@ -30,10 +35,14 @@ func state_default():
 	if Input.is_action_just_pressed("ui_att"):
 		use_item(preload("res://items/attack.tscn"))
 		anim_switch("att")
-	
+		#######
+		swordsounds.play()
+		#######
 	if Input.is_action_just_pressed("ui_attD"):
 		use_item(preload("res://items/attackD.tscn"))
-		
+		########
+		spearsounds.play()
+		########
 
 
 func state_swing():

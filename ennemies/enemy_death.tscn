@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://ennemies/enemy_death.gd" type="Script" id=1]
 [ext_resource path="res://ennemies/enemy_death.png" type="Texture" id=2]
+[ext_resource path="res://sounds/RPG Sound Pack/misc/random2.wav" type="AudioStream" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "default"
@@ -29,3 +30,8 @@ anims/default = SubResource( 1 )
 texture = ExtResource( 2 )
 hframes = 8
 frame = 6
+
+[node name="audioeffect" type="Node" parent="."]
+
+[node name="deathsound" type="AudioStreamPlayer2D" parent="audioeffect"]
+stream = ExtResource( 3 )

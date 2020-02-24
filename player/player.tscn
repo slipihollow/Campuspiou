@@ -1,8 +1,11 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
 [ext_resource path="res://player/playerF2.png" type="Texture" id=2]
 [ext_resource path="res://player/player.tres" type="Animation" id=3]
+[ext_resource path="res://sounds/RPG Voice Starter Pack/Type 2/damaged3.wav" type="AudioStream" id=4]
+[ext_resource path="res://sounds/battle_sound_effects/swish_2.wav" type="AudioStream" id=5]
+[ext_resource path="res://sounds/RPG Sound Pack/battle/swing.wav" type="AudioStream" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7.74588, 14.4049 )
@@ -554,3 +557,18 @@ shape = SubResource( 13 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="audioeffect" type="Node" parent="."]
+
+[node name="damagesound" type="AudioStreamPlayer2D" parent="audioeffect"]
+stream = ExtResource( 4 )
+volume_db = -25.0
+
+[node name="spearsound" type="AudioStreamPlayer2D" parent="audioeffect"]
+stream = ExtResource( 5 )
+volume_db = -15.0
+
+[node name="swordsound" type="AudioStreamPlayer2D" parent="audioeffect"]
+stream = ExtResource( 6 )
+volume_db = -15.0
+attenuation = 5.46416

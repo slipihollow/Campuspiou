@@ -26,7 +26,6 @@ extents = Vector2( 7.35369, 7.85207 )
 extents = Vector2( 7.5323, 8.22343 )
 
 [node name="stalfaux" type="KinematicBody2D"]
-position = Vector2( 0.0488415, 0.0207065 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
