@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/painr.wav-f3057635d4ca29e367d84f073765e75a.sample"
+
+[deps]
+
+source_file="res://sounds/monster/painr.wav"
+dest_files=[ "res://.import/painr.wav-f3057635d4ca29e367d84f073765e75a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

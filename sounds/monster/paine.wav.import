@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/paine.wav-b44f2c72ab11b6a1fe9f4bd0c0a6510a.sample"
+
+[deps]
+
+source_file="res://sounds/monster/paine.wav"
+dest_files=[ "res://.import/paine.wav-b44f2c72ab11b6a1fe9f4bd0c0a6510a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

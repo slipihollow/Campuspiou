@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/deathe.wav-728b0034f24a2c1ad1c8caa3baf7f49b.sample"
+
+[deps]
+
+source_file="res://sounds/monster/deathe.wav"
+dest_files=[ "res://.import/deathe.wav-728b0034f24a2c1ad1c8caa3baf7f49b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
