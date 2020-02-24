@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/curse.wav-48c4b5b413e92ee7a46bd85b0c49f0ae.sample"
+
+[deps]
+
+source_file="res://sounds/RPG Voice Starter Pack/Type 2/curse.wav"
+dest_files=[ "res://.import/curse.wav-48c4b5b413e92ee7a46bd85b0c49f0ae.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
