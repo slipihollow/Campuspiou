@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/healed3.wav-f48ae7f79a7e3e00abde0defc549f6a0.sample"
+
+[deps]
+
+source_file="res://sounds/RPG Voice Starter Pack/Type 3/healed3.wav"
+dest_files=[ "res://.import/healed3.wav-f48ae7f79a7e3e00abde0defc549f6a0.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
