@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 export (int) var MAXHEALTH = 2
-export (String, "ENEMY", "PLAYER", "NPC") var TYPE = "ENEMY"
+export (String, "ENEMY", "PLAYER", "NPC", "ENEMY2") var TYPE = "ENEMY2"
 export (float) var SPEED = 50
 
 var movedir = Vector2(0,0)
@@ -12,10 +12,15 @@ var hitstun = 0
 var health = MAXHEALTH
 var texture_default = null
 var texture_hurt 	= null
-
+#####
+export var min_move_distance = 150
+#onready var deathsounds = $"audioeffect/deathsound"
+onready var damagesounds = $"audioeffect/damagesound"
+#####
 
 func _ready():
-	if TYPE == "ENEMY": #définir collision entre type + sprites de dommage
+
+	if TYPE == "ENEMY2": #définir collision entre type + sprites de dommage
 		set_collision_mask_bit(1,1)
 		set_physics_process(false)
 	texture_default = $sprite.texture
@@ -26,7 +31,7 @@ func movement_loop(): # définir le knockback quand toucher un ennemi
 	if hitstun == 0:
 		motion = movedir.normalized() * SPEED
 	else:
-		motion = knockdir.normalized() * SPEED * 3
+		motion = knockdir.normalized() * SPEED * 4
 	move_and_slide(motion, Vector2(0,0))
 	
 	if movedir != dir.center and dir.list.has(movedir):
@@ -54,18 +59,23 @@ func damage_loop(): #définir animation de dommage
 		$sprite.texture = texture_hurt
 	else:
 		$sprite.texture = texture_default
-		if TYPE == "ENEMY" and health <= 0: #si l'ennemi est mort --> drop de coeur =)
+		if TYPE == "ENEMY2" and health <= 0: #si l'ennemi est mort --> drop de coeur =)
+			
 			var drop = randi() % 3
 			if drop == 0:
 				instance_scene(preload("res://pickups/heart.tscn"))
 			instance_scene(preload("res://ennemies/enemy_death.tscn"))
 			queue_free()
+
 	
 	for area in $hitbox.get_overlapping_areas(): #pour les contacts de hitbox
 		var body = area.get_parent()
 		if hitstun == 0 and body.get("DAMAGE") != null and body.get("TYPE") != TYPE: #si les 2 entités ne sont pas du même type 
 			health -= body.get("DAMAGE")
 			hitstun = 10
+			######
+			damagesounds.play()
+			######
 			knockdir = global_transform.origin - body.global_transform.origin
 			if body.get_groups().has("destroy_on_hit"):
 				body.queue_free()
