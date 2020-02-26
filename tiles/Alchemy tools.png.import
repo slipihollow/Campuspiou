@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/country.png-36e26515eca973df6211eb6dd497a91b.stex"
+path="res://.import/Alchemy tools.png-90627c2087a3540fc78a75bd763de8c6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tiles/country.png"
-dest_files=[ "res://.import/country.png-36e26515eca973df6211eb6dd497a91b.stex" ]
+source_file="res://tiles/Alchemy tools.png"
+dest_files=[ "res://.import/Alchemy tools.png-90627c2087a3540fc78a75bd763de8c6.stex" ]
 
 [params]
 

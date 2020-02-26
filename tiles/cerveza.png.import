@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/country.png-36e26515eca973df6211eb6dd497a91b.stex"
+path="res://.import/cerveza.png-0c2d3dd3d70a093f414409b90bc01861.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tiles/country.png"
-dest_files=[ "res://.import/country.png-36e26515eca973df6211eb6dd497a91b.stex" ]
+source_file="res://tiles/cerveza.png"
+dest_files=[ "res://.import/cerveza.png-0c2d3dd3d70a093f414409b90bc01861.stex" ]
 
 [params]
 
