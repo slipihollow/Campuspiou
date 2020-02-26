@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/victoria.png-f3ae0d261e2950cb831a5314836883f2.stex"
+path="res://.import/upholstery.png-e934aaf78896c055323469deb7a2fd55.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tiles/victoria.png"
-dest_files=[ "res://.import/victoria.png-f3ae0d261e2950cb831a5314836883f2.stex" ]
+source_file="res://tiles/upholstery.png"
+dest_files=[ "res://.import/upholstery.png-e934aaf78896c055323469deb7a2fd55.stex" ]
 
 [params]
 
