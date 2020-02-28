@@ -1,10 +1,16 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://areas/inscri.gd" type="Script" id=1]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://tiles/insidefloor2.tres" type="TileSet" id=3]
 [ext_resource path="res://tiles/indoor.tres" type="TileSet" id=4]
-[ext_resource path="res://areas/doortrigger6.gd" type="Script" id=5]
+[ext_resource path="res://Godot_menu/Theme/Theme_test.tres" type="Theme" id=5]
+[ext_resource path="res://ui/inté.gd" type="Script" id=6]
+[ext_resource path="res://theme/Campus_Theme.tres" type="Theme" id=7]
+[ext_resource path="res://ui/inté_gen.gd" type="Script" id=8]
+[ext_resource path="res://addons/MSG_System/sfx/dialogue_sound.wav" type="AudioStream" id=9]
+[ext_resource path="res://ui/Beep.gd" type="Script" id=10]
+[ext_resource path="res://areas/doortrigger6.gd" type="Script" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 13.5527, 10 )
@@ -44,13 +50,74 @@ format = 1
 [node name="TileMap6" type="TileMap" parent="."]
 format = 1
 
+[node name="Control" type="Control" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -2.85516
+margin_top = 242.364
+margin_right = -2.85516
+margin_bottom = 320.364
+theme = ExtResource( 5 )
+
+[node name="Timer" type="Timer" parent="Control"]
+wait_time = 0.05
+autostart = true
+
+[node name="PopupDialog" type="PopupDialog" parent="Control"]
+visible = true
+margin_left = 4.68323
+margin_top = -324.806
+margin_right = 642.683
+margin_bottom = -250.806
+script = ExtResource( 6 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/PopupDialog"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = -66.0
+margin_right = -3.0
+margin_bottom = -20.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/PopupDialog/NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -10.9998
+margin_bottom = 7.0
+theme = ExtResource( 7 )
+bbcode_enabled = true
+bbcode_text = "Ici c'est l'Unithéque, le bâtiment de la Direction de l'Unil et le centre d'inscription. Tu devras pour t'inscrire correctement à l'Unil rècupérer les 9 questies répartis partout sur le campus (sinon c'est pas drôle) pour dèbloquer ton sèsame universitaire!"
+text = "Ici c'est l'Unithéque, le bâtiment de la Direction de l'Unil et le centre d'inscription. Tu devras pour t'inscrire correctement à l'Unil rècupérer les 9 questies répartis partout sur le campus (sinon c'est pas drôle) pour dèbloquer ton sèsame universitaire!"
+script = ExtResource( 8 )
+
+[node name="Button" type="Button" parent="Control/PopupDialog"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -96.0
+margin_top = -19.0
+margin_right = 1.0
+margin_bottom = 1.0
+text = "Intéressant..."
+
+[node name="Beep" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource( 9 )
+script = ExtResource( 10 )
+
 [node name="doortrigger6" type="Area2D" parent="."]
 position = Vector2( 270.716, 315.671 )
-script = ExtResource( 5 )
+script = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="doortrigger6"]
 position = Vector2( 0.890656, 46.3038 )
 shape = SubResource( 1 )
 one_way_collision = true
+[connection signal="timeout" from="Control/Timer" to="Control/Beep" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Control/Timer" to="Control/PopupDialog/NinePatchRect/RichTextLabel" method="_on_Timer_timeout"]
+[connection signal="popup_hide" from="Control/PopupDialog" to="Control/PopupDialog" method="_on_PopupDialog_popup_hide"]
+[connection signal="pressed" from="Control/PopupDialog/Button" to="Control/PopupDialog" method="_on_Button_pressed"]
 [connection signal="body_entered" from="doortrigger6" to="doortrigger6" method="_on_doortrigger6_body_entered"]
 [connection signal="body_exited" from="doortrigger6" to="doortrigger6" method="_on_doortrigger6_body_exited"]

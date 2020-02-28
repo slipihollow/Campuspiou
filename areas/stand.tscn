@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://areas/stand.gd" type="Script" id=1]
 [ext_resource path="res://engine/Camera.tscn" type="PackedScene" id=2]
@@ -7,6 +7,12 @@
 [ext_resource path="res://tiles/house3.tres" type="TileSet" id=5]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://areas/doortrigger12.gd" type="Script" id=7]
+[ext_resource path="res://Godot_menu/Theme/Theme_test.tres" type="Theme" id=8]
+[ext_resource path="res://ui/inté.gd" type="Script" id=9]
+[ext_resource path="res://theme/Campus_Theme.tres" type="Theme" id=10]
+[ext_resource path="res://ui/inté_gen.gd" type="Script" id=11]
+[ext_resource path="res://addons/MSG_System/sfx/dialogue_sound.wav" type="AudioStream" id=12]
+[ext_resource path="res://ui/Beep.gd" type="Script" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16.1364, 10 )
@@ -61,5 +67,68 @@ script = ExtResource( 7 )
 position = Vector2( -0.902466, 42.4174 )
 shape = SubResource( 1 )
 one_way_collision = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -2.85516
+margin_top = -117.636
+margin_right = -2.85516
+margin_bottom = -39.636
+theme = ExtResource( 8 )
+
+[node name="Timer" type="Timer" parent="CanvasLayer/Control"]
+wait_time = 0.05
+autostart = true
+
+[node name="PopupDialog" type="PopupDialog" parent="CanvasLayer/Control"]
+visible = true
+margin_left = 5.0
+margin_top = -348.548
+margin_right = 643.0
+margin_bottom = -247.548
+script = ExtResource( 9 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Control/PopupDialog"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = -66.0
+margin_right = -3.0
+margin_bottom = -20.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control/PopupDialog/NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -13.0
+margin_right = -11.0
+theme = ExtResource( 10 )
+bbcode_enabled = true
+bbcode_text = "Ici c'est l'Amphipôle (mais tout le monde dit que c'est Amphimax vu que les bâtiments sont collès). Lors de la journèe des premiéres, tous les stands des diffèrentes associations du campus sont dans ce couloir. Tu as un questie à trouver ici."
+text = "Ici c'est l'Amphipôle (mais tout le monde dit que c'est Amphimax vu que les bâtiments sont collès). Lors de la journèe des premiéres, tous les stands des diffèrentes associations du campus sont dans ce couloir. Tu as un questie à trouver ici."
+script = ExtResource( 11 )
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/PopupDialog"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -96.0
+margin_top = -19.0
+margin_right = 1.0
+margin_bottom = 1.0
+text = "Intéressant..."
+
+[node name="Beep" type="AudioStreamPlayer" parent="CanvasLayer/Control"]
+stream = ExtResource( 12 )
+script = ExtResource( 13 )
 [connection signal="body_entered" from="doortrigger12" to="doortrigger12" method="_on_doortrigger12_body_entered"]
 [connection signal="body_exited" from="doortrigger12" to="doortrigger12" method="_on_doortrigger12_body_exited"]
+[connection signal="timeout" from="CanvasLayer/Control/Timer" to="CanvasLayer/Control/Beep" method="_on_Timer_timeout"]
+[connection signal="timeout" from="CanvasLayer/Control/Timer" to="CanvasLayer/Control/PopupDialog/NinePatchRect/RichTextLabel" method="_on_Timer_timeout"]
+[connection signal="popup_hide" from="CanvasLayer/Control/PopupDialog" to="CanvasLayer/Control/PopupDialog" method="_on_PopupDialog_popup_hide"]
+[connection signal="pressed" from="CanvasLayer/Control/PopupDialog/Button" to="CanvasLayer/Control/PopupDialog" method="_on_Button_pressed"]

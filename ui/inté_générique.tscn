@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Godot_menu/Theme/Theme_test.tres" type="Theme" id=1]
 [ext_resource path="res://ui/inté.gd" type="Script" id=2]
 [ext_resource path="res://theme/Campus_Theme.tres" type="Theme" id=3]
 [ext_resource path="res://ui/inté_gen.gd" type="Script" id=4]
+[ext_resource path="res://addons/MSG_System/sfx/dialogue_sound.wav" type="AudioStream" id=5]
+[ext_resource path="res://ui/Beep.gd" type="Script" id=6]
 
 [node name="Control" type="Control"]
 anchor_top = 1.0
@@ -56,6 +58,11 @@ margin_top = -19.0
 margin_right = 1.0
 margin_bottom = 1.0
 text = "Intéressant..."
+
+[node name="Beep" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+script = ExtResource( 6 )
+[connection signal="timeout" from="Timer" to="Beep" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer" to="PopupDialog/NinePatchRect/RichTextLabel" method="_on_Timer_timeout"]
 [connection signal="popup_hide" from="PopupDialog" to="PopupDialog" method="_on_PopupDialog_popup_hide"]
 [connection signal="pressed" from="PopupDialog/Button" to="PopupDialog" method="_on_Button_pressed"]

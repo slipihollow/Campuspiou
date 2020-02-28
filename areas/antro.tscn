@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://areas/antro.gd" type="Script" id=1]
 [ext_resource path="res://areas/doortrigger16.gd" type="Script" id=2]
@@ -8,6 +8,10 @@
 [ext_resource path="res://tiles/indoor.tres" type="TileSet" id=6]
 [ext_resource path="res://tiles/chaise.tres" type="TileSet" id=7]
 [ext_resource path="res://tiles/shop.tres" type="TileSet" id=8]
+[ext_resource path="res://Godot_menu/Theme/Theme_test.tres" type="Theme" id=9]
+[ext_resource path="res://ui/inté.gd" type="Script" id=10]
+[ext_resource path="res://theme/Campus_Theme.tres" type="Theme" id=11]
+[ext_resource path="res://ui/inté_gen.gd" type="Script" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24.823, 10 )
@@ -86,5 +90,60 @@ tile_data = PoolIntArray( 720918, 0, 0, 720927, 1, 0 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Control" type="Control" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -2.85516
+margin_top = 242.364
+margin_right = -2.85516
+margin_bottom = 320.364
+theme = ExtResource( 9 )
+
+[node name="Timer" type="Timer" parent="Control"]
+wait_time = 0.05
+autostart = true
+
+[node name="PopupDialog" type="PopupDialog" parent="Control"]
+visible = true
+margin_left = 4.68323
+margin_top = -324.806
+margin_right = 642.683
+margin_bottom = -250.806
+script = ExtResource( 10 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/PopupDialog"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = -66.0
+margin_right = -3.0
+margin_bottom = -20.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/PopupDialog/NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -11.0
+theme = ExtResource( 11 )
+bbcode_enabled = true
+bbcode_text = "Ici c'est l'anthropole, le bâtiment principal des Lettres. Tu y trouveras une cafféteria, la librairie Basta, une papetterie qui vend des cigarettes, l'Epicentre (un magasin bio), et un bancomat. Il y a un questie à trouver ici."
+text = "Ici c'est l'anthropole, le bâtiment principal des Lettres. Tu y trouveras une cafféteria, la librairie Basta, une papetterie qui vend des cigarettes, l'Epicentre (un magasin bio), et un bancomat. Il y a un questie à trouver ici."
+script = ExtResource( 12 )
+
+[node name="Button" type="Button" parent="Control/PopupDialog"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -96.0
+margin_top = -19.0
+margin_right = 1.0
+margin_bottom = 1.0
+text = "Intéressant..."
 [connection signal="body_entered" from="doortrigger16" to="doortrigger16" method="_on_doortrigger16_body_entered"]
 [connection signal="body_exited" from="doortrigger16" to="." method="_on_doortrigger16_body_exited"]
+[connection signal="timeout" from="Control/Timer" to="Control/PopupDialog/NinePatchRect/RichTextLabel" method="_on_Timer_timeout"]
+[connection signal="popup_hide" from="Control/PopupDialog" to="Control/PopupDialog" method="_on_PopupDialog_popup_hide"]
+[connection signal="pressed" from="Control/PopupDialog/Button" to="Control/PopupDialog" method="_on_Button_pressed"]

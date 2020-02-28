@@ -61,6 +61,7 @@ autostart = true
 
 [node name="beep" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+volume_db = -25.128
 script = ExtResource( 5 )
 
 [node name="Timer" type="Timer" parent="."]
@@ -68,5 +69,4 @@ wait_time = 40.0
 autostart = true
 [connection signal="pressed" from="PopupDialog/Button" to="PopupDialog" method="_on_Button_pressed"]
 [connection signal="timeout" from="affichageBBcode" to="PopupDialog/RichTextLabel" method="_on_affichageBBcode_timeout"]
-[connection signal="finished" from="beep" to="PopupDialog/RichTextLabel" method="_on_beep_finished"]
 [connection signal="timeout" from="Timer" to="beep" method="_on_Timer_timeout"]

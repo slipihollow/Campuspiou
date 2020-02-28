@@ -224,7 +224,7 @@ position = Vector2( 6.10352e-005, -45.2323 )
 shape = SubResource( 7 )
 
 [node name="doortrigger15" type="Area2D" parent="house/door"]
-position = Vector2( 8401.97, 2296.08 )
+position = Vector2( 8404.97, 2296.08 )
 script = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="house/door/doortrigger15"]
@@ -234,7 +234,7 @@ shape = SubResource( 8 )
 one_way_collision = true
 
 [node name="player" parent="." instance=ExtResource( 17 )]
-position = Vector2( 8377.85, 2411.54 )
+position = Vector2( 8127.66, 2417.99 )
 SPEED = 300.0
 
 [node name="shape" parent="player" index="0"]
