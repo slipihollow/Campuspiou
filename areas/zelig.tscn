@@ -1,11 +1,17 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://areas/inside1.gd" type="Script" id=1]
 [ext_resource path="res://areas/doortrigger2.gd" type="Script" id=2]
 [ext_resource path="res://tiles/indoor.tres" type="TileSet" id=3]
 [ext_resource path="res://tiles/canape.tres" type="TileSet" id=4]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://tiles/cerveza.png" type="Texture" id=6]
+[ext_resource path="res://Godot_menu/Theme/Theme_test.tres" type="Theme" id=6]
+[ext_resource path="res://ui/inté.gd" type="Script" id=7]
+[ext_resource path="res://theme/Campus_Theme.tres" type="Theme" id=8]
+[ext_resource path="res://ui/inté_gen.gd" type="Script" id=9]
+[ext_resource path="res://addons/MSG_System/sfx/dialogue_sound.wav" type="AudioStream" id=10]
+[ext_resource path="res://ui/Beep.gd" type="Script" id=11]
+[ext_resource path="res://tiles/cerveza.png" type="Texture" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 25.9906, 14.91 )
@@ -66,35 +72,97 @@ position = Vector2( 462.306, 218.059 )
 z_index = 1
 SPEED = 100.0
 
+[node name="Control" type="Control" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -2.85516
+margin_top = 242.364
+margin_right = -2.85516
+margin_bottom = 320.364
+theme = ExtResource( 6 )
+
+[node name="Timer" type="Timer" parent="Control"]
+wait_time = 0.05
+autostart = true
+
+[node name="PopupDialog" type="PopupDialog" parent="Control"]
+visible = true
+margin_left = 5.0
+margin_top = -361.0
+margin_right = 643.0
+margin_bottom = -251.0
+script = ExtResource( 7 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/PopupDialog"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = -66.0
+margin_right = -3.0
+margin_bottom = -20.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/PopupDialog/NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -33.0
+margin_right = -11.0
+theme = ExtResource( 8 )
+bbcode_enabled = true
+bbcode_text = "Ici c'est Zelig, c'est un des rares lieux gèrè uniquement par des ètudiants pour des ètudiants. Tu y trouveras des canapès, des BDs, des baby-foots, des jeux, un bar (avec de la biére pas chére et du sans-alcool trop bon). Chaque jeudi, Zelig organise des concerts avec pleins d'artistes, passe une fois tu verras c'est sympa! Tu as un questie à trouver ici. "
+text = "Ici c'est Zelig, c'est un des rares lieux gèrè uniquement par des ètudiants pour des ètudiants. Tu y trouveras des canapès, des BDs, des baby-foots, des jeux, un bar (avec de la biére pas chére et du sans-alcool trop bon). Chaque jeudi, Zelig organise des concerts avec pleins d'artistes, passe une fois tu verras c'est sympa! Tu as un questie à trouver ici. "
+script = ExtResource( 9 )
+
+[node name="Button" type="Button" parent="Control/PopupDialog"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -96.0
+margin_top = -19.0
+margin_right = 1.0
+margin_bottom = 1.0
+text = "Intéressant..."
+
+[node name="Beep" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource( 10 )
+script = ExtResource( 11 )
+
 [node name="TileMap2" type="TileMap" parent="."]
 position = Vector2( -6.18803, 63.9429 )
 z_index = -1
 format = 1
 
 [node name="cerveza" type="Sprite" parent="TileMap2"]
+editor/display_folded = true
 position = Vector2( 408.378, 48.9107 )
 scale = Vector2( 0.733936, 0.861647 )
 z_index = 1
-texture = ExtResource( 6 )
+texture = ExtResource( 12 )
 
 [node name="cerveza" type="Sprite" parent="TileMap2/cerveza"]
 position = Vector2( 30.5764, 2.32857 )
-texture = ExtResource( 6 )
+texture = ExtResource( 12 )
 
 [node name="cerveza2" type="Sprite" parent="TileMap2/cerveza"]
 position = Vector2( -11.3127, -26.2786 )
-texture = ExtResource( 6 )
+texture = ExtResource( 12 )
 
 [node name="cerveza3" type="Sprite" parent="TileMap2/cerveza"]
 position = Vector2( 117.113, -0.565464 )
-texture = ExtResource( 6 )
+texture = ExtResource( 12 )
 
 [node name="cerveza4" type="Sprite" parent="TileMap2/cerveza"]
 position = Vector2( 205.266, -2.82563 )
-texture = ExtResource( 6 )
+texture = ExtResource( 12 )
 
 [node name="cerveza5" type="Sprite" parent="TileMap2/cerveza"]
 position = Vector2( 159.091, 4.54251 )
-texture = ExtResource( 6 )
+texture = ExtResource( 12 )
 [connection signal="body_entered" from="doortrigger2" to="doortrigger2" method="_on_doortrigger2_body_entered"]
 [connection signal="body_exited" from="doortrigger2" to="doortrigger2" method="_on_doortrigger_body_exited"]
+[connection signal="timeout" from="Control/Timer" to="Control/Beep" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Control/Timer" to="Control/PopupDialog/NinePatchRect/RichTextLabel" method="_on_Timer_timeout"]
+[connection signal="popup_hide" from="Control/PopupDialog" to="Control/PopupDialog" method="_on_PopupDialog_popup_hide"]
+[connection signal="pressed" from="Control/PopupDialog/Button" to="Control/PopupDialog" method="_on_Button_pressed"]
