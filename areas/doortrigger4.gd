@@ -10,20 +10,16 @@ func _on_doortrigger4_body_entered(body):
 	if body.name == "player":
 		set_process(true)
 		player = body
-		SceneManager.goto_scene("res://areas/test1.tscn")
+		var spawn_data =  {
+				"spawn_on_node": "house/door/doortrigger3",
+				}
+		SceneManager.goto_scene("res://areas/ppal.tscn",spawn_data)
+			#get_tree().change_scene("res://areas/test1.tscn")
 
 func _on_doortrigger4_body_exited(body):
 	if body.name =="player":
 		set_process(false)
 		player = body
 		
-func set_process(delta):
-	if player:
-		#if player and $anim.play("walkdown"):
-			var spawn_data =  {
-				"spawn_on_node": "house/door/doortrigger3",
-				}
-			SceneManager.goto_scene("res://areas/test1.tscn",spawn_data)
-			#get_tree().change_scene("res://areas/test1.tscn")
 
 
