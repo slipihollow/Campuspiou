@@ -10,5 +10,5 @@ func _ready():
 	popup()
 
 func _on_Button_pressed():
-	get_tree().change_scene("res://areas/test1.tscn")
+	get_tree().change_scene("res://areas/inscri.tscn")
 	pass # Replace with function body.
