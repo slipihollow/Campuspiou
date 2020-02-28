@@ -1,20 +1,22 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Game_over.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Godot_menu/Theme/Theme_test.tres" type="Theme" id=1]
+[ext_resource path="res://Game_over/Game_over.gd" type="Script" id=2]
+[ext_resource path="res://Godot_menu/icon.png" type="Texture" id=3]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Game_over" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 1 )
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="Game_over"]
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 322.5, 166.5 )
 scale = Vector2( 11.0781, 6.20313 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
 [node name="MarginContainer" type="MarginContainer" parent="Game_over"]
 anchor_right = 1.0
@@ -34,24 +36,24 @@ margin_top = 170.0
 margin_bottom = 170.0
 
 [node name="Buttons" type="VBoxContainer" parent="Game_over/MarginContainer"]
-margin_left = 278.0
-margin_top = 140.0
-margin_right = 361.0
-margin_bottom = 200.0
+margin_left = 250.0
+margin_top = 142.0
+margin_right = 390.0
+margin_bottom = 198.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 custom_constants/separation = 20
 alignment = 2
 
 [node name="Continue" type="Button" parent="Game_over/MarginContainer/Buttons"]
-margin_right = 83.0
-margin_bottom = 20.0
-text = "Continue ? "
+margin_right = 140.0
+margin_bottom = 18.0
+text = "Recommencer ? "
 
 [node name="Ragequit" type="Button" parent="Game_over/MarginContainer/Buttons"]
-margin_top = 40.0
-margin_right = 83.0
-margin_bottom = 60.0
-text = "Ragequit"
+margin_top = 38.0
+margin_right = 140.0
+margin_bottom = 56.0
+text = "Echec administratif..."
 [connection signal="pressed" from="Game_over/MarginContainer/Buttons/Continue" to="Game_over" method="_on_Continue_pressed"]
 [connection signal="pressed" from="Game_over/MarginContainer/Buttons/Ragequit" to="Game_over" method="_on_Ragequit_pressed"]

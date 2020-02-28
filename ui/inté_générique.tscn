@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Godot_menu/Theme/Theme_test.tres" type="Theme" id=1]
+[ext_resource path="res://ui/inté.gd" type="Script" id=2]
+[ext_resource path="res://theme/Campus_Theme.tres" type="Theme" id=3]
+[ext_resource path="res://ui/inté_gen.gd" type="Script" id=4]
+
+[node name="Control" type="Control"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -2.85516
+margin_top = 242.364
+margin_right = -2.85516
+margin_bottom = 320.364
+theme = ExtResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
+[node name="PopupDialog" type="PopupDialog" parent="."]
+visible = true
+margin_left = 4.68323
+margin_top = -324.806
+margin_right = 642.683
+margin_bottom = -250.806
+script = ExtResource( 2 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PopupDialog"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = -66.0
+margin_right = -3.0
+margin_bottom = -20.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PopupDialog/NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -11.0
+theme = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "Piou piou je suis le texte."
+text = "Piou piou je suis le texte."
+script = ExtResource( 4 )
+
+[node name="Button" type="Button" parent="PopupDialog"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -96.0
+margin_top = -19.0
+margin_right = 1.0
+margin_bottom = 1.0
+text = "Intéressant..."
+[connection signal="timeout" from="Timer" to="PopupDialog/NinePatchRect/RichTextLabel" method="_on_Timer_timeout"]
+[connection signal="popup_hide" from="PopupDialog" to="PopupDialog" method="_on_PopupDialog_popup_hide"]
+[connection signal="pressed" from="PopupDialog/Button" to="PopupDialog" method="_on_Button_pressed"]

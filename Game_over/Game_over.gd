@@ -14,7 +14,7 @@ func _ready():
 
 
 func _on_Continue_pressed():
-	get_tree().reload_current_scene()
+	get_tree().change_scene("res://areas/test1.tscn")
 
 
 func _on_Ragequit_pressed():

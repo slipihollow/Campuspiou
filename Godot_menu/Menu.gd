@@ -14,7 +14,7 @@ func _ready():
 
 
 func _on_New_Game_Button_pressed():
-	get_tree().change_scene("start_scene.tscn")
+	get_tree().change_scene("res://ui/Intro.tscn")
 
 func _on_Button_pressed():
 	get_tree().quit()
