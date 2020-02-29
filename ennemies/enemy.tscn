@@ -1,0 +1,28 @@
+[gd_scene format=2]
+
+[node name="Node2D" type="KinematicBody2D"]
+
+[node name="sprite" type="Sprite" parent="."]
+
+[node name="anim" type="AnimationPlayer" parent="."]
+
+[node name="shape" type="CollisionShape2D" parent="."]
+
+[node name="areadetector" type="Area2D" parent="."]
+monitorable = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ad" type="CollisionShape2D" parent="areadetector"]
+
+[node name="hitbox" type="Area2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+
+[node name="audioeffect" type="Node" parent="."]
+
+[node name="damagesound" type="AudioStreamPlayer2D" parent="audioeffect"]

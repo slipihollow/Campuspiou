@@ -1,11 +1,11 @@
 extends "res://engine/entity.gd"
 
-const DAMAGE = 0.25
+const DAMAGE = 0.5
 
 var player : Player
 
 func _ready() -> void:
-	$anim.play("formulaireR")
+	$anim.play("beeR")
 	$areadetector.connect("body_entered",self,"_on_areadetector_body_entered")
 	set_physics_process(false)
 
@@ -16,9 +16,9 @@ func _physics_process(delta : float) -> void:
 	var distance_to_player : = global_position.distance_to(player.global_position)
 	#$sprite.flip_h = direction.x < 0
 	if direction.x < 0:
-		$anim.play("formulaireL")
+		$anim.play("beeL")
 	else:
-		$anim.play("formulaireR")
+		$anim.play("beeR")
 	if distance_to_player <= min_move_distance:
 		move_and_collide(direction * SPEED * delta)
 

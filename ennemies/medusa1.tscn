@@ -1,0 +1,105 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://ennemies/medusa1.gd" type="Script" id=1]
+[ext_resource path="res://ennemies/creatures/morerpgenemies.png" type="Texture" id=2]
+[ext_resource path="res://ennemies/creatures/magicballL.tres" type="Animation" id=3]
+[ext_resource path="res://ennemies/creatures/magicballR.tres" type="Animation" id=4]
+[ext_resource path="res://sounds/RPG Sound Pack/NPC/shade/shade4.wav" type="AudioStream" id=5]
+[ext_resource path="res://ennemies/creatures/magicball.png" type="Texture" id=6]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 202.7
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 9.10198
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 20.8215
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 3.54949
+
+[node name="medusa1" type="KinematicBody2D"]
+script = ExtResource( 1 )
+MAXHEALTH = 5
+SPEED = 80.0
+health = 5
+min_move_distance = 200
+
+[node name="sprite" type="Sprite" parent="."]
+position = Vector2( 6.82559, -1.07772 )
+texture = ExtResource( 2 )
+vframes = 2
+hframes = 3
+frame = 3
+
+[node name="anim" type="AnimationPlayer" parent="."]
+playback_speed = 2.0
+anims/medusa1L = ExtResource( 3 )
+anims/medusa1R = ExtResource( 4 )
+
+[node name="shape" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, 3.59241 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="areadetector" type="Area2D" parent="."]
+visible = false
+monitorable = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ad" type="CollisionShape2D" parent="areadetector"]
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="hitbox" type="Area2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+visible = false
+position = Vector2( 1.25028, 17.2956 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="hitbox"]
+visible = false
+position = Vector2( 0.625137, -2.91733 )
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="audioeffect" type="Node" parent="."]
+
+[node name="damagesound" type="AudioStreamPlayer2D" parent="audioeffect"]
+stream = ExtResource( 5 )
+volume_db = -15.0
+
+[node name="magicball" type="Sprite" parent="."]
+visible = false
+position = Vector2( -64, 0 )
+rotation = 5.02655
+texture = ExtResource( 6 )
+vframes = 4
+
+[node name="hitbox2" type="Area2D" parent="."]
+monitoring = false
+
+[node name="magicball" type="CollisionShape2D" parent="hitbox2"]
+position = Vector2( -64, 0 )
+scale = Vector2( 0.2, 0.2 )
+shape = SubResource( 5 )
+disabled = true

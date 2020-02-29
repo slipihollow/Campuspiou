@@ -1,11 +1,50 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://ennemies/formulaire.gd" type="Script" id=1]
 [ext_resource path="res://ennemies/formulaire.png" type="Texture" id=2]
 [ext_resource path="res://sounds/monster/pains.wav" type="AudioStream" id=3]
 
 [sub_resource type="Animation" id=1]
-resource_name = "formulaire"
+resource_name = "formulaireL"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("hitbox/CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2.49316, 0.964169 ) ]
+}
+
+[sub_resource type="Animation" id=2]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("sprite:frame")
@@ -19,34 +58,117 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 0, 1 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("hitbox/CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -3.50684, 0.964169 ) ]
+}
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 9.79401, 14.2235 )
+[sub_resource type="Animation" id=3]
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
-[sub_resource type="CircleShape2D" id=3]
-radius = 341.851
+[sub_resource type="Animation" id=4]
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 9.79401, 19.0398 )
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 505.854
+
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 11.0363, 20.587 )
 
 [node name="formulaire" type="KinematicBody2D"]
 script = ExtResource( 1 )
+MAXHEALTH = 4
+SPEED = 80.0
+health = 4
 min_move_distance = 250
 
 [node name="sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
+flip_h = true
 vframes = 2
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="anim" type="AnimationPlayer" parent="."]
-anims/formulaire = SubResource( 1 )
+anims/formulaireL = SubResource( 1 )
+anims/formulaireR = SubResource( 2 )
+anims/left = SubResource( 3 )
+anims/right = SubResource( 4 )
 
 [node name="shape" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2( -3, 0 )
-shape = SubResource( 2 )
+shape = SubResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -59,17 +181,20 @@ __meta__ = {
 }
 
 [node name="ad" type="CollisionShape2D" parent="areadetector"]
-shape = SubResource( 3 )
+shape = SubResource( 6 )
 
 [node name="hitbox" type="Area2D" parent="."]
-editor/display_folded = true
+visible = false
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
-position = Vector2( -3.50684, 0.964169 )
-shape = SubResource( 4 )
+position = Vector2( 2.49316, 0.964169 )
+shape = SubResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="audioeffect" type="Node" parent="."]
 

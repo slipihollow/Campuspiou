@@ -1,0 +1,181 @@
+[gd_scene load_steps=15 format=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 12.2754
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 7.01946
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 4.08744, 6.87429 )
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 3.8077
+height = 8.41309
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 8.74555
+height = 7.6009
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 12.6905
+
+[sub_resource type="CapsuleShape2D" id=7]
+radius = 8.11729
+height = 22.6731
+
+[sub_resource type="CapsuleShape2D" id=8]
+
+[sub_resource type="CapsuleShape2D" id=9]
+
+[sub_resource type="CapsuleShape2D" id=10]
+
+[sub_resource type="CapsuleShape2D" id=11]
+
+[sub_resource type="CapsuleShape2D" id=12]
+
+[sub_resource type="CapsuleShape2D" id=13]
+
+[sub_resource type="CapsuleShape2D" id=14]
+
+[node name="hitbox2" type="Area2D"]
+visible = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="body1" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( -6.87487, -10.0242 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="body2" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( -7.50043, -24.3764 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="body3" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 9.33571, -9.77212 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="body4" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 1.59903, 19.8035 )
+rotation = 1.5708
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="body5" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( -7.004, 12.8645 )
+rotation = 1.5708
+shape = SubResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="body6" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( -11.0063, -1.00057 )
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="spell1" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( -294, 0 )
+scale = Vector2( 0.2, 0.2 )
+shape = SubResource( 7 )
+disabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="spell2" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 304, 0 )
+scale = Vector2( 0.2, 0.2 )
+shape = SubResource( 8 )
+disabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="spell3" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 5, -304 )
+rotation = 1.5708
+scale = Vector2( 0.2, 0.2 )
+shape = SubResource( 9 )
+disabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="spell4" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 5.5, 299 )
+rotation = 1.5708
+scale = Vector2( 0.2, 0.2 )
+shape = SubResource( 10 )
+disabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="spellD1" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( -195, -195 )
+rotation = 0.785398
+scale = Vector2( 0.2, 0.2 )
+shape = SubResource( 11 )
+disabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="spellD2" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 195, -196 )
+rotation = 2.35619
+scale = Vector2( 0.2, 0.2 )
+shape = SubResource( 12 )
+disabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="spellD3" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 181.905, 181.905 )
+rotation = 0.785398
+scale = Vector2( 0.238095, 0.238095 )
+shape = SubResource( 13 )
+disabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="spellD4" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( -195, 195 )
+rotation = 5.49779
+scale = Vector2( 0.2, 0.2 )
+shape = SubResource( 14 )
+disabled = true
+__meta__ = {
+"_edit_lock_": true
+}

@@ -1,0 +1,627 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://ennemies/medusa2.gd" type="Script" id=1]
+[ext_resource path="res://ennemies/creatures/morerpgenemies.png" type="Texture" id=2]
+[ext_resource path="res://ennemies/creatures/magicballR.tres" type="Animation" id=3]
+[ext_resource path="res://ennemies/creatures/medusa2MB2.tres" type="Animation" id=4]
+[ext_resource path="res://sounds/RPG Sound Pack/NPC/shade/shade8.wav" type="AudioStream" id=5]
+[ext_resource path="res://ennemies/creatures/magicball.png" type="Texture" id=6]
+
+[sub_resource type="Animation" id=1]
+resource_name = "medusa2L"
+length = 9.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 7.09909, -3.54955 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("sprite:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("shape:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 15.8248, -4.89505 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("hitbox/CollisionShape2D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 4.48774, 8.50822 ), Vector2( 5.87522, 8.97071 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("hitbox/CollisionShape2D:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -5.0, -5.0 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("hitbox/CollisionShape2D2:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 1, 9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 30.6873, 1.24511 ), Vector2( 27.0901, 1.91316 ), Vector2( 27.4498, 3.09509 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("hitbox/CollisionShape2D2:rotation_degrees")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -5.0, -5.0 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("magicball:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("magicball:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -50, 0 ), Vector2( -35, 35 ), Vector2( 0, 50 ), Vector2( 35, 35 ), Vector2( 50, 0 ), Vector2( 35, -35 ), Vector2( 0, -50 ), Vector2( -35, -35 ), Vector2( -60, 0 ), Vector2( -50, 50 ), Vector2( 0, 75 ), Vector2( 50, 50 ), Vector2( 75, 0 ), Vector2( 50, -50 ), Vector2( 0, -75 ), Vector2( -50, -50 ), Vector2( -85, 0 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("magicball:rotation_degrees")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 45.0, 90.0, 135.0, 180.0, 225.0, 270.0, 315.0, 360.0, 405.0, 450.0, 495.0, 540.0, 585.0, 630.0, 675.0, 720.0 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("magicball:flip_h")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("magicball:frame")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 1, 1.4, 1.8, 2.2, 2.6, 3, 3.4, 3.8, 4.2, 4.6, 5, 5.4, 5.8, 6.2, 6.6, 7, 7.4, 7.8, 8.2, 8.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 0, 0, 1, 2, 3, 0, 0, 1, 2, 3, 0, 0, 1, 2, 3, 0 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("magicball:flip_v")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 1, 6.45226 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("hitbox2/magicball:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -50, 0 ), Vector2( -35, 35 ), Vector2( 0, 50 ), Vector2( 35, 35 ), Vector2( 50, 0 ), Vector2( 35, -35 ), Vector2( 0, -50 ), Vector2( -35, -35 ), Vector2( -60, 0 ), Vector2( -50, 50 ), Vector2( 0, 75 ), Vector2( 50, 50 ), Vector2( 75, 0 ), Vector2( 50, -50 ), Vector2( 0, -75 ), Vector2( -50, -50 ), Vector2( -85, 0 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("hitbox2/magicball:disabled")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("magicball:scale")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 1, 9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("hitbox2/magicball:scale")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 1, 9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.2, 0.2 ), Vector2( 0.2, 0.2 ) ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("anim:playback_speed")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 2.0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "medusa2R"
+length = 9.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 7.09909, -3.54955 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("sprite:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("shape:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.72767, -4.89505 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("hitbox/CollisionShape2D:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 6.6, 9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 5.0, 5.0, 5.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("hitbox/CollisionShape2D2:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 6.6, 9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 5.0, 5.0, 5.0 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("magicball:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("magicball:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -50, 0 ), Vector2( -35, 35 ), Vector2( 0, 50 ), Vector2( 35, 35 ), Vector2( 50, 0 ), Vector2( 35, -35 ), Vector2( 0, -50 ), Vector2( -35, -35 ), Vector2( -60, 0 ), Vector2( -50, 50 ), Vector2( 0, 75 ), Vector2( 50, 50 ), Vector2( 75, 0 ), Vector2( 50, -50 ), Vector2( 0, -75 ), Vector2( -50, -50 ), Vector2( -85, 0 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("magicball:rotation_degrees")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 45.0, 90.0, 135.0, 180.0, 225.0, 270.0, 315.0, 360.0, 405.0, 450.0, 495.0, 540.0, 585.0, 630.0, 675.0, 720.0 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("magicball:flip_h")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("magicball:frame")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 1, 1.4, 1.8, 2.2, 2.6, 3, 3.4, 3.8, 4.2, 4.6, 5, 5.4, 5.8, 6.2, 6.6, 7, 7.4, 7.8, 8.2, 8.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 0, 0, 1, 2, 3, 0, 0, 1, 2, 3, 0, 0, 1, 2, 3, 0 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("magicball:flip_v")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 1, 6.45226 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("hitbox2/magicball:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -50, 0 ), Vector2( -35, 35 ), Vector2( 0, 50 ), Vector2( 35, 35 ), Vector2( 50, 0 ), Vector2( 35, -35 ), Vector2( 0, -50 ), Vector2( -35, -35 ), Vector2( -60, 0 ), Vector2( -50, 50 ), Vector2( 0, 75 ), Vector2( 50, 50 ), Vector2( 75, 0 ), Vector2( 50, -50 ), Vector2( 0, -75 ), Vector2( -50, -50 ), Vector2( -85, 0 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("hitbox2/magicball:disabled")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("magicball:scale")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 1, 9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("hitbox2/magicball:scale")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 1, 9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.2, 0.2 ), Vector2( 0.2, 0.2 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("anim:playback_speed")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("hitbox/CollisionShape2D:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 8.65018, 7.58323 ) ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("hitbox/CollisionShape2D2:position")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0, 9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -11.694, 1.87579 ), Vector2( -12.1565, 1.87579 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 12.6599, 19.9871 )
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 315.611
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 12.6695, 41.5748 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 14.2617, 36.1868 )
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 22.4019
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 8.6044
+
+[node name="medusa2" type="KinematicBody2D"]
+script = ExtResource( 1 )
+MAXHEALTH = 6
+SPEED = 80.0
+health = 6
+min_move_distance = 300
+knock = 6
+
+[node name="sprite" type="Sprite" parent="."]
+position = Vector2( 7.09909, -3.54955 )
+texture = ExtResource( 2 )
+flip_h = true
+vframes = 2
+hframes = 3
+frame = 4
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="anim" type="AnimationPlayer" parent="."]
+playback_speed = 2.0
+anims/medusa2L = SubResource( 1 )
+anims/medusa2MB = ExtResource( 3 )
+anims/medusa2MB2 = ExtResource( 4 )
+anims/medusa2R = SubResource( 2 )
+
+[node name="shape" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 15.8248, -4.89505 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="areadetector" type="Area2D" parent="."]
+visible = false
+monitorable = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ad" type="CollisionShape2D" parent="areadetector"]
+shape = SubResource( 4 )
+
+[node name="hitbox" type="Area2D" parent="."]
+visible = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2( 4.54941, 8.52878 )
+rotation = -0.0872665
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="hitbox"]
+position = Vector2( 29.2484, 1.51233 )
+rotation = -0.0872665
+shape = SubResource( 6 )
+
+[node name="audioeffect" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="damagesound" type="AudioStreamPlayer2D" parent="audioeffect"]
+stream = ExtResource( 5 )
+volume_db = -10.0
+
+[node name="magicball" type="Sprite" parent="."]
+visible = false
+position = Vector2( -71, 0 )
+rotation = 7.53982
+texture = ExtResource( 6 )
+vframes = 4
+
+[node name="anim2" type="AnimationPlayer" parent="."]
+playback_speed = 0.5
+anims/medusa3 = ExtResource( 4 )
+
+[node name="magicball2" type="Sprite" parent="."]
+visible = false
+position = Vector2( 0, 90 )
+rotation = 8.79646
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 6 )
+vframes = 4
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="hitbox2" type="Area2D" parent="."]
+editor/display_folded = true
+visible = false
+monitoring = false
+
+[node name="magicball" type="CollisionShape2D" parent="hitbox2"]
+position = Vector2( -71, 0 )
+scale = Vector2( 0.2, 0.2 )
+shape = SubResource( 7 )
+disabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="magicball2" type="CollisionShape2D" parent="hitbox2"]
+position = Vector2( 0.248298, 90.3132 )
+shape = SubResource( 8 )
+disabled = true
+__meta__ = {
+"_edit_lock_": true
+}
