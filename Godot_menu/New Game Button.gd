@@ -18,7 +18,7 @@ func _on_New_Game_Button_pressed():
   player.play()
   timer.start()
   yield(timer, "timeout")
-  get_tree().change_scene("res://ui/Intro.tscn")	
+  SceneManager.goto_scene("res://ui/Intro.tscn")	
 
 func _on_Timer_timeout():
 	pass # Replace with function body.
