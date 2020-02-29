@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export (int) var MAXHEALTH = 2
+export (int) var MAXHEALTH = 50
 export (String, "ENEMY", "PLAYER", "NPC", "ENEMY2") var TYPE = "ENEMY2"
 export (float) var SPEED = 50
 
@@ -9,13 +9,14 @@ var last_movedir = Vector2(0,1)
 var knockdir = Vector2(0,0)
 var spritedir = "down"
 var hitstun = 0
-var health = MAXHEALTH
 var texture_default = null
 var texture_hurt 	= null
-#####
+######
+export var health = 50
+#var health = MAXHEALTH
 export var min_move_distance = 150
-#onready var deathsounds = $"audioeffect/deathsound"
 onready var damagesounds = $"audioeffect/damagesound"
+export var knock = 3
 #####
 
 func _ready():
@@ -31,7 +32,7 @@ func movement_loop(): # définir le knockback quand toucher un ennemi
 	if hitstun == 0:
 		motion = movedir.normalized() * SPEED
 	else:
-		motion = knockdir.normalized() * SPEED * 4
+		motion = knockdir.normalized() * SPEED * knock
 	move_and_slide(motion, Vector2(0,0))
 	
 	if movedir != dir.center and dir.list.has(movedir):
@@ -53,7 +54,9 @@ func anim_switch(animation): #définir changement d'animation en fonction des di
 		$anim.play(newanim)
 
 func damage_loop(): #définir animation de dommage
+
 	health = min(MAXHEALTH, health)
+	
 	if hitstun > 0:
 		hitstun -= 1
 		$sprite.texture = texture_hurt
@@ -73,13 +76,12 @@ func damage_loop(): #définir animation de dommage
 		if hitstun == 0 and body.get("DAMAGE") != null and body.get("TYPE") != TYPE: #si les 2 entités ne sont pas du même type 
 			health -= body.get("DAMAGE")
 			hitstun = 10
-			######
 			damagesounds.play()
-			######
 			knockdir = global_transform.origin - body.global_transform.origin
 			if body.get_groups().has("destroy_on_hit"):
 				body.queue_free()
 			
+
 func use_item(item): 
 	var newitem = item.instance()
 	newitem.add_to_group(str(item,self))

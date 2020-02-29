@@ -513,10 +513,11 @@ __meta__ = {
 "_edit_horizontal_guides_": [ 142.201 ],
 "_edit_lock_": true
 }
+MAXHEALTH = 6
 TYPE = "PLAYER"
+health = 6
 
 [node name="shape" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( 0.0724792, 8.87456 )
 rotation = -0.00256827
 shape = SubResource( 1 )
@@ -562,7 +563,7 @@ __meta__ = {
 
 [node name="damagesound" type="AudioStreamPlayer2D" parent="audioeffect"]
 stream = ExtResource( 4 )
-volume_db = -25.0
+volume_db = -15.0
 
 [node name="spearsound" type="AudioStreamPlayer2D" parent="audioeffect"]
 stream = ExtResource( 5 )

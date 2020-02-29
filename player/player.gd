@@ -8,6 +8,7 @@ onready var spearsounds = $"audioeffect/spearsound"
 var state = "default"
 
 var keys = 0
+var questies = 0
 
 func _physics_process(delta):
 	match state:

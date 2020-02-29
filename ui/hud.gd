@@ -28,4 +28,5 @@ func _process(delta):
 		if index < last_heart:
 			heart.frame = 4
 		
-	$keys.frame = player.keys
+	$questies.frame = player.questies
+	
