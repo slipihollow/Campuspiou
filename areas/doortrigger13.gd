@@ -18,8 +18,4 @@ func _on_doortrigger13_body_exited(body):
 		set_process(false)
 		player = body
 		
-func _process(delta):
-	#if player:
-		#if player.get_node("anim").anim == "walkup":
-			SceneManager.goto_scene("res://areas/labo.tscn")
-			#get_tree().change_scene("res://areas/inside1.tscn")
+
