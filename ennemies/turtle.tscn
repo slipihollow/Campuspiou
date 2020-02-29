@@ -1,0 +1,307 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://ennemies/turtle.gd" type="Script" id=1]
+[ext_resource path="res://ennemies/creatures/rpgcritters2.png" type="Texture" id=2]
+[ext_resource path="res://sounds/RPG Sound Pack/NPC/gutteral beast/mnstr12.wav" type="AudioStream" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "turtleL"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("sprite:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -2.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("sprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0.348442, 1.9745 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("hitbox/CollisionShape2D:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 60.0, 62.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("hitbox/CollisionShape2D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 7.4334, -0.464586 ), Vector2( 7.89799, 1.39376 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("hitbox/CollisionShape2D2:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 21.2549, -0.232295 ), Vector2( 21.6033, 1.04532 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("hitbox/CollisionShape2D2:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -90.0, -92.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("shape:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 11.453, 0.932656 ), Vector2( 11.8015, 2.55871 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "turtleR"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("sprite:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 2.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("sprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0.348442, 1.9745 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("hitbox/CollisionShape2D:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -60.0, -62.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("hitbox/CollisionShape2D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -8.13028, -0.34844 ), Vector2( -6.96881, 1.50991 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("hitbox/CollisionShape2D2:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -21.6033, -9.53674e-07 ), Vector2( -20.9064, 1.27761 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("hitbox/CollisionShape2D2:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 90.0, 92.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("shape:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -11.3299, 0.52697 ), Vector2( -11.2137, 2.38532 ) ]
+}
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 4.9369
+height = 15.4525
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 201.949
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 7.50855
+height = 15.2227
+
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 9.4979
+height = 3.07607
+
+[node name="turtle" type="KinematicBody2D"]
+script = ExtResource( 1 )
+MAXHEALTH = 7
+SPEED = 60.0
+health = 7
+min_move_distance = 200
+knock = 1
+
+[node name="sprite" type="Sprite" parent="."]
+position = Vector2( 0.314136, 1.7801 )
+rotation = -0.0314698
+texture = ExtResource( 2 )
+flip_h = true
+vframes = 5
+frame = 4
+
+[node name="anim" type="AnimationPlayer" parent="."]
+anims/turtleL = SubResource( 1 )
+anims/turtleR = SubResource( 2 )
+
+[node name="shape" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 11.7672, 2.39862 )
+rotation = 1.5708
+shape = SubResource( 3 )
+
+[node name="areadetector" type="Area2D" parent="."]
+visible = false
+monitorable = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ad" type="CollisionShape2D" parent="areadetector"]
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="hitbox" type="Area2D" parent="."]
+visible = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2( 7.85225, 1.21079 )
+rotation = 1.07867
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="hitbox"]
+position = Vector2( 21.569, 0.91953 )
+rotation = -1.60227
+shape = SubResource( 6 )
+
+[node name="audioeffect" type="Node" parent="."]
+
+[node name="damagesound" type="AudioStreamPlayer2D" parent="audioeffect"]
+stream = ExtResource( 3 )
+volume_db = -15.0
