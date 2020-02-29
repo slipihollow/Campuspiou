@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Future-City-Life.wav-1a75ce7990445211be8cdf5d6bd8a17c.sample"
+
+[deps]
+
+source_file="res://sounds/Future-City-Life.wav"
+dest_files=[ "res://.import/Future-City-Life.wav-1a75ce7990445211be8cdf5d6bd8a17c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=true
+compress/mode=0

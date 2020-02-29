@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Restaurant Ambiance -SoundBible.com-628640170.wav-644dc7fd5d1548e4a46bfb4e1ac05bc5.sample"
+
+[deps]
+
+source_file="res://sounds/Restaurant Ambiance -SoundBible.com-628640170.wav"
+dest_files=[ "res://.import/Restaurant Ambiance -SoundBible.com-628640170.wav-644dc7fd5d1548e4a46bfb4e1ac05bc5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=true
+compress/mode=0

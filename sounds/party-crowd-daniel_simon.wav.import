@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/party-crowd-daniel_simon.wav-c8d93b377223e8e1cbd71d828230516b.sample"
+
+[deps]
+
+source_file="res://sounds/party-crowd-daniel_simon.wav"
+dest_files=[ "res://.import/party-crowd-daniel_simon.wav-c8d93b377223e8e1cbd71d828230516b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/8-Bit-Puzzler.wav-3cdd406c7891a36693c209a861c1fc9d.sample"
+
+[deps]
+
+source_file="res://sounds/8-Bit-Puzzler.wav"
+dest_files=[ "res://.import/8-Bit-Puzzler.wav-3cdd406c7891a36693c209a861c1fc9d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

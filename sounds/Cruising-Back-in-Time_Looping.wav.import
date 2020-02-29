@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Cruising-Back-in-Time_Looping.wav-a8bbec884676c38f116b07f37a613694.sample"
+
+[deps]
+
+source_file="res://sounds/Cruising-Back-in-Time_Looping.wav"
+dest_files=[ "res://.import/Cruising-Back-in-Time_Looping.wav-a8bbec884676c38f116b07f37a613694.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=true
+compress/mode=0
